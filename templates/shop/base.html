@@ -1,0 +1,39 @@
+{% load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'bootrtl/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
+    <link href="{% static 'base.css' %}" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+    <div class="col-md-6">
+
+        {% include 'shop/_navbar.html' %}
+    </div>
+    <div class="col-md-6">
+
+        {% block content %}
+
+
+        {% endblock %}
+
+
+    </div>
+</div>
+</div>
+{#<div class="container">#}
+{#    <div class="row">#}
+{#        <div class="col-md-6">2</div>#}
+{#        <div class="col-md-4">333</div>#}
+{#        <div class="col-md-2">44</div>#}
+{#        #}
+{#    </div>#}
+{#</div>#}
+</body>
+<script src="{% static 'jquery-3.4.1.min.js' %}" rel="javascript" type="javascript"></script>
+<script src="{% static 'bootrtl/bootstrap.min.js' %}" type="javascript"></script>
+</html>
