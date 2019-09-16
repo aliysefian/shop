@@ -1,5 +1,43 @@
-{%  extends 'shop/base.html' %}
+{% extends 'shop/base.html' %}
 {% block content %}
 
+    <table class="table">
 
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">name</th>
+            <th scope="col">price</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in products %}
+            <tr>
+                {#      <th scope="row">1</th>#}
+                <td><a href="{{ item.get_absolute_url }}" >{{ item.name }}</a></td>
+                <td>{{ item.price }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+{% block sidebar %}
+    <table class="table">
+
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">name</th>
+{#            <th scope="col">price</th>#}
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in categories %}
+            <tr>
+                {#      <th scope="row">1</th>#}
+                <td>{{ item.name }}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
